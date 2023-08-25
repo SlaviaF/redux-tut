@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import HomeContainer from "./containers/HomeContainer";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+  <div className="add-to-cart">
+    <img src= "data:image/png;base64,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" alt="add-to-cart"/>
     </div>
+    <div className="App">
+      <div className="stack">
+        <h1>Home</h1>
+        <HomeContainer />
+      </div>
+    </div>
+    </>
   );
 }
 
